@@ -1,0 +1,4 @@
+# Write your MySQL query statement below
+select contest_id,round((count(*)*100/ (select count(*) from Users)),2) as percentage from Users inner join Register on Users.user_id = Register.user_id group by contest_id order by percentage desc,contest_id asc;
+
+-- In above query percentage desc,contest_id asc; this means that you can write mutliple condition with comma in order by such that it treats like first first condition is use and if there is a tie then only move to second condition otherwise ignore and if in second conditon there occurs a tie then only it moves to third condition elsse ignore.
